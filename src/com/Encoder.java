@@ -6,7 +6,7 @@ import java.nio.charset.UnsupportedCharsetException;
 
 public class Encoder {
     public static void main(String[] args) {
-        if (copyFilesUsingStream("src/com/utf8.txt", "UTF-8txt", "src/com/win1251.txt", "WINDOWS-1251")) {
+        if (copyFilesUsingStream("src/utf8.txt", "UTF-8", "src/com/win1251.txt", "WINDOWS-1251")) {
             System.out.println("File was  successfully encoded");
         } else {
             System.out.println("File is not created");
