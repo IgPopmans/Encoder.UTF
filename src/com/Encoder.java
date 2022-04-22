@@ -21,14 +21,14 @@ public class Encoder {
         try {
             sEnc = Charset.forName(sourceEnc);
         } catch (UnsupportedCharsetException e) {
-            System.out.println("There is a problem with Input file encoding");
+            System.out.println("There is a problem with Input file encoding" + e.getMessage());
             return false;
         }
         Charset dEnc = null;
         try {
             dEnc = Charset.forName(descEnc);
         } catch (UnsupportedCharsetException e) {
-            System.out.println("There is a problem with Input file encoding");
+            System.out.println("There is a problem with Input file encoding" + e.getMessage());
             return false;
         }
 
@@ -36,14 +36,14 @@ public class Encoder {
         try {
             fis = new InputStreamReader(new FileInputStream(source), sEnc);
         } catch (FileNotFoundException e) {
-            System.out.println("There is a problem with Input File");
+            System.out.println("There is a problem with Input File" + e.getMessage());
             return false;
         }
         Writer fos = null;
         try {
             fos = new OutputStreamWriter(new FileOutputStream(dest), dEnc);
         } catch (FileNotFoundException e) {
-            System.out.println("There is a problem with Output File");
+            System.out.println("There is a problem with Output File" + e.getMessage());
             return false;
         }
         char[] buffer = new char[1024];
